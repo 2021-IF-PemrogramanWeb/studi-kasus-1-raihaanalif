@@ -5,6 +5,9 @@
         <a class="nav-link active" href="../pages/table-page.php">Table</a>
     </li>
     <li class="nav-item">
+      <a class="nav-link" href="../pages/chart-page.php">Chart</a>
+    </li>
+    <li class="nav-item">
       <a class="nav-link text-danger" href="../php/logout.php">Logout</a>
     </li>
   </ul>
