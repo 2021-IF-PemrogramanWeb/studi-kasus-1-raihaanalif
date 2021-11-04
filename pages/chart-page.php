@@ -16,10 +16,10 @@
 <body class="hold-transition sidebar-mini">
     <?php include('../fragment/navbar.php')?>
     <?php
-    $connect = mysqli_connect("localhost", "root", "", "laliga");
-    $team = mysqli_query($connect, "select Team from mytable");
-    $gf = mysqli_query($connect, "select MG from mytable");
-    $ga = mysqli_query($connect, "select KG from mytable");
+    $connect = pg_connect("host=localhost user=postgres password=142924 dbname=pweb-app");
+    $team = pg_query($connect, 'select "Team" from mytable');
+    $gf = pg_query($connect, 'select "MG" from mytable');
+    $ga = pg_query($connect, 'select "KG" from mytable');
     ?>
     <div class="fluid-container" style="margin-left: auto; margin-right: auto; width: 80%">
     <section class="content">
@@ -54,7 +54,7 @@
             var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
             var areaChartData = {
-            labels  : [<?php while($t = mysqli_fetch_array($team)){ echo '"' . $t['Team'].'",';}?>],
+            labels  : [<?php while($t = pg_fetch_array($team)){ echo '"' . $t['Team'].'",';}?>],
             datasets: [
                 {
                     label               : 'Goal For',
@@ -65,7 +65,7 @@
                     pointStrokeColor    : 'rgba(60,141,188,1)',
                     pointHighlightFill  : '#fff',
                     pointHighlightStroke: 'rgba(60,141,188,1)',
-                    data                : [<?php while($f = mysqli_fetch_array($gf)){ echo '"' . $f['MG'].'",';}?>]
+                    data                : [<?php while($f = pg_fetch_array($gf)){ echo '"' . $f['MG'].'",';}?>]
                 },
                 {
                     label               : 'Goal Against',
@@ -76,7 +76,7 @@
                     pointStrokeColor    : '#c1c7d1',
                     pointHighlightFill  : '#fff',
                     pointHighlightStroke: 'rgba(220,220,220,1)',
-                    data                : [<?php while($a = mysqli_fetch_array($ga)){ echo '"' . $a['KG'].'",';}?>]
+                    data                : [<?php while($a = pg_fetch_array($ga)){ echo '"' . $a['KG'].'",';}?>]
                 },
             ]
         }

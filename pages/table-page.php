@@ -49,9 +49,9 @@
                   </thead>
                   <tbody>
                       <?php
-                      $connect = mysqli_connect("localhost", "root", "", "laliga");
-                      $fill = mysqli_query($connect, "select * from mytable");
-                      while($f = mysqli_fetch_array($fill)){
+                      $connect = pg_connect("host=localhost user=postgres password=142924 dbname=pweb-app");
+                      $fill = pg_query($connect, "select * from mytable");
+                      while($f = pg_fetch_array($fill)){
                           ?>
                           <tr>
                               <td><?php echo $f['Pos']; ?></td>
