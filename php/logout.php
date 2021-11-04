@@ -1,4 +1,4 @@
 <?php
 // mengalihkan halaman ke halaman login
-header("location:../pages/login-page.php?pesan=logout");
+header("location:../pages/index.php?pesan=logout");
 ?>

@@ -7,7 +7,7 @@ if($email == "raihanalifianto@gmail.com" && $pass == "test1234"){
     header('location:../pages/table-page.php?pesan=berhasil');
 }
 else{
-    header("location:../pages/login-page.php?pesan=gagal");
+    header("location:../pages/index.php?pesan=gagal");
 }
 
 ?>
