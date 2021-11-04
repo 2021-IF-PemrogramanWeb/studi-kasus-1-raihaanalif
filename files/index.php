@@ -28,7 +28,7 @@
                 <hr>
             </div>
             <div class="card-body">
-                <form action="../php/login.php" method="post">
+                <form action="./php/login.php" method="post">
                     <div class="mb-3 row">
                         <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
