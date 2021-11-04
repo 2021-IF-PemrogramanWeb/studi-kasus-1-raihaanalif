@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
-    <?php include('../fragment/navbar.php')?>
+    <?php include('./fragment/navbar.php')?>
     <div class="fluid-container" style="margin-left: auto; margin-right: auto; width: 80%">
     <section class="content">
     <?php
@@ -24,7 +24,7 @@
             }
           }
   	?>
-    <img src="../img/laligalogo.png" alt="logoku" class="rounded mx-auto d-block" style="height: 10%; width: 10%;">
+    <img src="./img/laligalogo.png" alt="logoku" class="rounded mx-auto d-block" style="height: 10%; width: 10%;">
       <div class="container-fluid">
       <div class="card">
               <div class="card-header" style="margin-left: auto; margin-right: auto">

@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container">
-        <img src="../img/logo.jpg" alt="logoku" class="rounded mx-auto d-block" style="height: 30%; width: 30%;">
+        <img src="./img/logo.jpg" alt="logoku" class="rounded mx-auto d-block" style="height: 30%; width: 30%;">
         <?php
           if(isset($_GET['pesan'])){
             if($_GET['pesan'] =="gagal"){
