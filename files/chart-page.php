@@ -16,7 +16,7 @@
 <body class="hold-transition sidebar-mini">
     <?php include('./fragment/navbar.php')?>
     <?php
-        $connect = pg_connect("host=localhost user=postgres password=142924 dbname=pweb-app");
+        include('./php/config.php');
         $team = pg_query($connect, 'select "Team" from mytable');
         $gf = pg_query($connect, 'select "MG" from mytable');
         $ga = pg_query($connect, 'select "KG" from mytable');

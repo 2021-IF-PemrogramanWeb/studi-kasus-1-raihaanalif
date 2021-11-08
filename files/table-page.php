@@ -49,7 +49,7 @@
                   </thead>
                   <tbody>
                       <?php
-                      $connect = pg_connect("host=localhost user=postgres password=142924 dbname=pweb-app");
+                      include('./php/config.php');
                       $fill = pg_query($connect, "select * from mytable");
                       while($f = pg_fetch_array($fill)){
                           ?>
