@@ -23,7 +23,7 @@
               echo "<div class='alert alert-success' role='alert' align='center'>Selamat Datang Raihan Alif</div>";
             }
           }else if(!isset($_COOKIE[$email])){
-            header("location:../index.php?pesan=logout");
+            header("location:../index.php?pesan=habis");
           }
   	?>
     <img src="./img/laligalogo.png" alt="logoku" class="rounded mx-auto d-block" style="height: 10%; width: 10%;">

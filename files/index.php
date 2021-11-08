@@ -19,6 +19,8 @@
               echo "<div class='alert alert-danger' role='alert' align='center'>Email dan Password Tidak Sesuai</div>";
             }elseif($_GET['pesan'] == "logout"){
               echo "<div class='alert alert-success' role='alert' align='center'>Anda Berhasil Logout</div>";
+            }elseif($_GET['pesan'] == "habis"){
+              echo "<div class='alert alert-danger' role='alert' align='center'>Waktu anda telah habis</div>";
             }
           }
   	    ?>

@@ -18,7 +18,7 @@
     <?php
         include('./php/config.php');
         if(!isset($_COOKIE[$email])){
-            header("location:../index.php?pesan=logout");
+            header("location:../index.php?pesan=habis");
           }
         $team = $connect->query('select "Team" from mytable');
         $gf = $connect->query('select "MG" from mytable');
