@@ -1,9 +1,10 @@
 <?php
-
+session_start();
 $email = $_POST["email"];
 $pass = $_POST["password"];
 
 if($email == "raihanalifianto@gmail.com" && $pass == "test1234"){
+    $_SESSION['email'] = $email;
     header('location:../table-page.php?pesan=berhasil');
 }
 else{
