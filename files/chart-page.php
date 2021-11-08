@@ -17,9 +17,9 @@
     <?php include('./fragment/navbar.php')?>
     <?php
         include('./php/config.php');
-        $team = pg_query($connect, 'select "Team" from mytable');
-        $gf = pg_query($connect, 'select "MG" from mytable');
-        $ga = pg_query($connect, 'select "KG" from mytable');
+        $team = $connect->query('select "Team" from mytable');
+        $gf = $connect->query('select "MG" from mytable');
+        $ga = $connect->query('select "KG" from mytable');
     ?>
     <div class="fluid-container" style="margin-left: auto; margin-right: auto; width: 80%">
     <section class="content">
@@ -54,7 +54,7 @@
             var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
             var areaChartData = {
-            labels  : [<?php while($t = pg_fetch_array($team)){ echo '"' . $t['Team'].'",';}?>],
+            labels  : [<?php while($t = $team->fetch(PDO::FETCH_ASSOC)){ echo '"' . $t['Team'].'",';}?>],
             datasets: [
                 {
                     label               : 'Goal For',
@@ -65,7 +65,7 @@
                     pointStrokeColor    : 'rgba(60,141,188,1)',
                     pointHighlightFill  : '#fff',
                     pointHighlightStroke: 'rgba(60,141,188,1)',
-                    data                : [<?php while($f = pg_fetch_array($gf)){ echo '"' . $f['MG'].'",';}?>]
+                    data                : [<?php while($f = $gf->fetch(PDO::FETCH_ASSOC)){ echo '"' . $f['MG'].'",';}?>]
                 },
                 {
                     label               : 'Goal Against',
@@ -76,7 +76,7 @@
                     pointStrokeColor    : '#c1c7d1',
                     pointHighlightFill  : '#fff',
                     pointHighlightStroke: 'rgba(220,220,220,1)',
-                    data                : [<?php while($a = pg_fetch_array($ga)){ echo '"' . $a['KG'].'",';}?>]
+                    data                : [<?php while($a = $ga->fetch(PDO::FETCH_ASSOC)){ echo '"' . $a['KG'].'",';}?>]
                 },
             ]
         }
