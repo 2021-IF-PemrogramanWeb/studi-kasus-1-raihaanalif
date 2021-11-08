@@ -50,8 +50,8 @@
                   <tbody>
                       <?php
                       include('./php/config.php');
-                      $fill = pg_query($connect, "select * from mytable");
-                      while($f = pg_fetch_array($fill)){
+                      $fill = $connect->query("select * from mytable");
+                      while($f = $fill->fetch(PDO::FETCH_ASSOC)){
                           ?>
                           <tr>
                               <td><?php echo $f['Pos']; ?></td>
