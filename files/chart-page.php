@@ -17,6 +17,9 @@
     <?php include('./fragment/navbar.php')?>
     <?php
         include('./php/config.php');
+        if(!isset($_COOKIE[$email])){
+            header("location:../index.php?pesan=logout");
+          }
         $team = $connect->query('select "Team" from mytable');
         $gf = $connect->query('select "MG" from mytable');
         $ga = $connect->query('select "KG" from mytable');
