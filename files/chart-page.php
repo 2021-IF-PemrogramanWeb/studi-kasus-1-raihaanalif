@@ -17,10 +17,6 @@
     <?php include('./fragment/navbar.php')?>
     <?php
         include('./php/config.php');
-        if(!isset($_COOKIE[$email])){
-            session_destroy();
-            header("location:../index.php?pesan=habis");
-          }
         $team = $connect->query('select "Team" from mytable');
         $gf = $connect->query('select "MG" from mytable');
         $ga = $connect->query('select "KG" from mytable');
