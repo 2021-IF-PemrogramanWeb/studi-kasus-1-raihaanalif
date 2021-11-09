@@ -18,6 +18,7 @@
     <?php
         include('./php/config.php');
         if(!isset($_COOKIE[$email])){
+            session_destroy();
             header("location:../index.php?pesan=habis");
           }
         $team = $connect->query('select "Team" from mytable');

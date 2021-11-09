@@ -23,6 +23,7 @@
               echo "<div class='alert alert-success' role='alert' align='center'>Selamat Datang Raihan Alif</div>";
             }
           }else if(!isset($_COOKIE[$email])){
+            session_destroy();
             header("location:../index.php?pesan=habis");
           }
   	?>
