@@ -23,6 +23,9 @@
               echo "<div class='alert alert-success' role='alert' align='center'>Selamat Datang Raihan Alif</div>";
             }
           }
+          elseif($_SESSION["email"] == "" && $_SESSION["password"] == ""){
+            header("location:index.php?pesan=login");
+          }
   	?>
     <img src="./img/laligalogo.png" alt="logoku" class="rounded mx-auto d-block" style="height: 10%; width: 10%;">
       <div class="container-fluid">

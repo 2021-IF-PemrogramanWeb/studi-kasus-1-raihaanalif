@@ -21,6 +21,8 @@
               echo "<div class='alert alert-success' role='alert' align='center'>Anda Berhasil Logout</div>";
             }elseif($_GET['pesan'] == "habis"){
               echo "<div class='alert alert-danger' role='alert' align='center'>Waktu anda telah habis</div>";
+            }elseif($_GET['pesan'] == "login"){
+              echo "<div class='alert alert-danger' role='alert' align='center'>Silahkan Login</div>";
             }
           }
   	    ?>
