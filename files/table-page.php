@@ -18,13 +18,16 @@
     <div class="fluid-container" style="margin-left: auto; margin-right: auto; width: 80%">
     <section class="content">
     <?php
-          if(isset($_GET['pesan'])){
-            if($_GET['pesan'] =="berhasil"){
-              echo "<div class='alert alert-success' role='alert' align='center'>Selamat Datang Raihan Alif</div>";
-            }
-          }
-          else if(!isset($_SESSION["email"])){
+          session_start();
+
+          if(!isset($_SESSION['email'])){
             header("location:index.php?pesan=login");
+          }else{
+            if(isset($_GET['pesan'])){
+              if($_GET['pesan'] =="berhasil"){
+                echo "<div class='alert alert-success' role='alert' align='center'>Selamat Datang Raihan Alif</div>";
+              }
+            }
           }
   	?>
     <img src="./img/laligalogo.png" alt="logoku" class="rounded mx-auto d-block" style="height: 10%; width: 10%;">

@@ -16,8 +16,10 @@
 <body class="hold-transition sidebar-mini">
     <?php include('./fragment/navbar.php')?>
     <?php
+        session_start();
+
         include('./php/config.php');
-        if(!isset($_SESSION["email"])){
+        if(!isset($_SESSION['email'])){
             header("location:index.php?pesan=login");
           }
         $team = $connect->query('select "Team" from mytable');
