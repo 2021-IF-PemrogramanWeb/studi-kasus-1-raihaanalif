@@ -4,10 +4,8 @@ $email = $_POST["email"];
 $pass = $_POST["password"];
 
 if($email == "raihanalifianto@gmail.com" && $pass == "test1234"){
-    $_SESSION['email'] = $email;
-    setcookie('email', $email, time() + 30);
     $_SESSION["email"] = $email;
-    $_SESSION["password"] = $pass;
+    // $_SESSION["password"] = $pass;
     header('location:../table-page.php?pesan=berhasil');
 }
 else{
