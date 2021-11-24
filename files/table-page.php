@@ -23,7 +23,7 @@
               echo "<div class='alert alert-success' role='alert' align='center'>Selamat Datang Raihan Alif</div>";
             }
           }
-          if($_SESSION["email"] == "" && $_SESSION["password"] == ""){
+          else if(!isset($_SESSION["email"])){
             header("location:index.php?pesan=login");
           }
   	?>

@@ -17,7 +17,7 @@
     <?php include('./fragment/navbar.php')?>
     <?php
         include('./php/config.php');
-        if($_SESSION["email"] == "" && $_SESSION["password"] == ""){
+        if(!isset($_SESSION["email"])){
             header("location:index.php?pesan=login");
           }
         $team = $connect->query('select "Team" from mytable');
