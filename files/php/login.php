@@ -1,9 +1,14 @@
 <?php
+include ('config.php');
 
 $email = $_POST["email"];
 $pass = $_POST["password"];
 
-if($email == "raihanalifianto@gmail.com" && $pass == "test1234"){
+$after_hash = password_hash($pass, PASSWORD_DEFAULT);
+$query = $connect->query("select * from account where email = $email and passwords = $after_hash");
+
+$check = pg_num_rows($query);
+if($check > 0){
     session_start();
     $_SESSION['email'] = $email;
     
