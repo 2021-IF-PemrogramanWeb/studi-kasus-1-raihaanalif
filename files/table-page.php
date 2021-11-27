@@ -19,13 +19,13 @@
     <section class="content">
     <?php
           session_start();
-
+          include('./php/config.php');
           if(!isset($_SESSION['email'])){
             header("location:index.php?pesan=login");
           }else{
             if(isset($_GET['pesan'])){
               if($_GET['pesan'] =="berhasil"){
-                echo "<div class='alert alert-success' role='alert' align='center'>Selamat Datang Raihan Alif</div>";
+                echo "<div class='alert alert-success' role='alert' align='center'>Selamat Datang</div>";
               }
             }
           }
@@ -55,7 +55,7 @@
                   </thead>
                   <tbody>
                       <?php
-                      include('./php/config.php');
+
                       $fill = $connect->query("select * from mytable");
                       while($f = $fill->fetch(PDO::FETCH_ASSOC)){
                           ?>
