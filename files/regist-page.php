@@ -13,6 +13,11 @@
 <body>
 <div class="container">
     <img src="./img/logo.jpg" alt="logoku" class="rounded mx-auto d-block" style="height: 50%; width: 30%;">
+    <?php
+    if(isset($_GET['pesan']))
+        if($_GET['pesan'] =="gagal")
+            echo "<div class='alert alert-danger' role='alert' align='center'>Register Error</div>";
+    ?>
     <div class="card" style="width: 40rem; margin: auto">
         <div class="card-title">
             <h2 style="text-align: center; color: #1167b1"><b>Register</b></h2>
