@@ -6,7 +6,7 @@ $name = $_POST['name'];
 $email= $_POST['email'];
 $password = $_POST['password'];
 
-$after_hash = password_hash($password, PASSWORD_DEFAULT);
+$after_hash = md5($password);
 
 $query = $connect->query("insert into account (id_user, nama, email, passwords) values (nextval('id_user'::regclass), 
     '$name', '$email', '$after_hash')");
