@@ -9,7 +9,7 @@ $password = $_POST['password'];
 $after_hash = password_hash($password, PASSWORD_DEFAULT);
 
 $query = $connect->query("insert into account (id_user, nama, email, passwords) values (nextval('id_user'), 
-    $name, $email, $after_hash)");
+    '$name', '$email', '$after_hash')");
 if(!query){
     header("location:../regis-page.php?pesan=gagal");
 }else{
