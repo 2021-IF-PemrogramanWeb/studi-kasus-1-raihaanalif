@@ -6,7 +6,7 @@ $pass = $_POST["password"];
 
 $after_hash = md5($pass);
 
-$query = $connect->query("select * from account where email = '$email' and passwords = '$after_hash'");
+$query = $connect->query('select * from account where email = "$email" and passwords = "$after_hash"');
 
 $check = pg_num_rows($query);
 if($check > 0){
