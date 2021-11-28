@@ -6,8 +6,7 @@ $pass = $_POST["password"];
 
 $after_hash = md5($pass);
 
-if(!password_verify($pass, $after_hash)) echo "invalid pass";
-$query = pg_query($connect, "select * from account where email = '$email' and passwords = '$after_hash'");
+$query = $connect->query("select * from account where email = '$email' and passwords = '$after_hash'");
 
 $check = pg_num_rows($query);
 if($check > 0){
