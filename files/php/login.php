@@ -8,7 +8,7 @@ $after_hash = md5($pass);
 
 $query = $connect->query("select * from account where email = '$email' and passwords = '$after_hash'");
 
-$check = pg_num_rows($query);
+$check = $query->fetch(PDO::FETCH_ASSOC);
 if($check > 0){
     session_start();
     $_SESSION['email'] = $email;
